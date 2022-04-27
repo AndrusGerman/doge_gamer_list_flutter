@@ -6,10 +6,27 @@ class DogItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Item Divider
+    final itemDivider = Container(
+      height: 1,
+      width: double.infinity,
+      color: const Color.fromARGB(34, 43, 43, 43),
+    );
+
+    const length = 50;
     // Generate randoms Gamers Dogs
     final randonGamerDogList = ListView.builder(
-        itemCount: 50,
+        itemCount: length,
         itemBuilder: (context, index) {
+          // Item Divider
+          if (index != 0 && index < length) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [itemDivider, DogItem(index: index)],
+            );
+          }
+
+          // Normal item
           return DogItem(index: index);
         });
 

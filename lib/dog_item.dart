@@ -50,8 +50,19 @@ class DogItem extends StatelessWidget {
           color: Colors.red,
         ));
 
+    // Box Shadow
+    const decorationContainer = BoxDecoration(
+      boxShadow: [
+        BoxShadow(
+            color: Color.fromARGB(31, 29, 29, 29),
+            blurRadius: 30,
+            offset: Offset(0, 0.3)),
+      ],
+    );
+
     return Container(
       margin: const EdgeInsets.all(10),
+      decoration: decorationContainer,
       child: ListTile(
         leading: image,
         title: textContent,
