@@ -18,6 +18,9 @@ class DogItem extends StatelessWidget {
               image: NetworkImage("https://place.dog/300/200?index=$index"))),
     );
 
+    final nameGenerator = UsernameGen();
+    nameGenerator.setSeperator(" ");
+
     final textContent = Container(
       alignment: Alignment.topLeft,
       margin: const EdgeInsets.only(
@@ -28,7 +31,7 @@ class DogItem extends StatelessWidget {
         children: [
           // Name
           Text(
-            UsernameGen().generate(),
+            nameGenerator.generate(),
             style: const TextStyle(
               fontWeight: FontWeight.bold,
             ),
